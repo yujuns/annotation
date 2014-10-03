@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Annotation Tool for Social Sciences">
+    <title>Annotation</title>
+
+    <link href = "css/bootstrap.min.css" rel ="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <script src="js/jquery-2.1.1.js"></script>
+  <script src="js/jquery-ui.js"></script>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="brand">Anno</div>
+                <div class="pj-name">Lab Space Use</div>
+                <img src="images/user.png">
+            </div>
+        </div>
+    </header>
+    <div class="summary-main">
+        <div class="container">
+            <div class="main-nav myTabs">
+                <div class="nav" role="tablist">
+                    <li><a href="#" role="tab" data-toggle="tab">Files</a></li>
+                    <li class="active"><a href="#summary" role="tab" data-toggle="tab">Summary</a></li>
+                    <li><a href="#" role="tab" data-toggle="tab">Activity</a></li>
+                    <li><a href="#" role="tab" data-toggle="tab">People</a></li>
+                </div>
+            </div>
+            <img src="images/setting.png">
+        </div>
+    </div>
+    <div class="tab-content">
+
+        <div class="tab-pane active" id="summary">
+            <div class="container sort-bar">
+                <img id="ic-search" src="images/search-grey.png">
+                <input placeholder="Enter name of groups or themes">
+
+                <button class="create-group">
+                    <img src="images/add-white.png">
+                    <p>New Group</p>
+                </button>
+                <a href="#"><p class="a-z">A-Z</p></a>
+                <a href="#"><img id="ic-quantity" src="images/amount.png"></a>
+                <a href="#"><img id="ic-important" src="images/star-big.png"></a>
+                <p class="sort-by">Sort by</p>
+            </div>
+            <div class="row">
+                <div class="container summary-body">
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                        <ul id="sortableA" class="connectedSortableA">
+                            <div class="group-name">
+                                <p>Untitled Group</p>
+                            </div>
+                            <div class="insight-theme">
+                                <div class="summary-theme">
+                                    <p> Likes</p>
+                                    <ul id="sortable1" class="connectedSortable">
+                                        <li class="ui-state-default">
+                                            <p>Enjoy a lot of leisure time<span>Annotator01</span></p>
+                                            <div class="vote">
+                                                <span>Important</span>
+                                                <img src="images/important.png">
+                                                <span class="num_imp">3</span>
+                                                <span class="ist">Instance 1</span>
+                                            </div>
+                                        </li>
+                                        <li class="hidden-info">
+                                            <p>“I like the idea of not taking yourself so seriously and enjoying your leisure time and you know having a beer and just kind of—I don’t know. I don’t think that—I think there’s been a movement away from that sort of national identity because it seems something a little bit more—it’s not as sophisticated or you know.”</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="group-name">
+                                <p>National Identity</p>
+                            </div>
+                            <div class="insight-theme">
+                                <div class="summary-theme">
+                                    <p> Anzac Day</p>
+                                    <ul id="sortable1" class="connectedSortable">
+                                        <li class="ui-state-default">
+                                            <p>Getting together, socializing , and enjoy the day off.<span>Annotator01</span></p>
+                                            <div class="vote">
+                                            <span>Important</span>
+                                            <img src="images/important.png">
+                                            <span class="num_imp">0</span>
+                                            <span class="ist">Instance 1</span>
+                                            </div>
+                                        </li>
+                                        <li class="hidden-info">
+                                            <p>“Usually, any sort of public holiday like that is a big excuse for me and my mates to end up having a big piss-up in a pub. You know, just getting together and socialising, enjoying a day off.“</p>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <p>People went to the procession.<span>Annotator02</span></p>
+                                            <div class="vote">
+                                            <span>Important</span>
+                                            <img src="images/important.png">
+                                            <span class="num_imp">3</span>
+                                            <span class="ist">Instance 1</span>
+                                            </div>
+                                        </li>
+                                        <li class="hidden-info">
+                                            <p>“A couple of people but my age anyway. Certainly from working in the pub and stuff—I’ve worked Anzac Days before and it’s pretty huge still with the older kind of people.”</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="insight-theme">
+                                <div class="summary-theme">
+                                    <p> Australian Day</p>
+                                    <ul id="sortable1" class="connectedSortable">
+                                        <li class="ui-state-default">
+                                            <p>There is a big music festival<span>Annotator02</span></p>
+                                            <div class="vote">
+                                            <span>Important</span>
+                                            <img src="images/important.png">
+                                            <span class="num_imp">3</span>
+                                            <span class="ist">Instance 1</span>
+                                            </div>
+                                        </li>
+                                        <li class="hidden-info">
+                                            <p>“Well the Australia Day is—there’s a big festival, music festival. It’s the Big Day Out and that usually goes round the mainland and we usually go to the Melbourne one for that day.”</p>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <p> wearing the flag helps gain national identity <span>Annotator02</span></p>
+                                            <div class="vote">
+                                            <span>Important</span>
+                                            <img src="images/important.png">
+                                            <span class="num_imp">2</span>
+                                            <span class="ist">Instance 2</span>
+                                            </div>
+                                        </li>
+                                        <li class="hidden-info">
+                                            <p>Yeah, they had a big argument about people not wearing the Australian flag to that because they thought it was going to stir the pot a little bit because there’d just been all of that stuff with—oh, I can’t remember.</p>
+                                            <p>It actually had the opposite effect to which they intended, which was really nice to know that people still get worked up about their national identity.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="insight-theme">
+                                <div class="summary-theme">
+                                    <p>Sports</p>
+                                    <ul id="sortable1" class="connectedSortable">
+                                        <li class="ui-state-default">
+                                            <p>Australians emphasize too much on sports identity<span>Annotator02</span></p>
+                                            <div class="vote">
+                                            <span>Important</span>
+                                            <img src="images/important.png">
+                                            <span class="num_imp">3</span>
+                                            <span class="ist">Instance 2</span>
+                                            </div>
+                                        </li>
+                                        <li class="hidden-info">
+                                            <p>But I think Australia puts too much emphasis on its sporting achievements or sporting identity anyway. It’s not something I ...</p>
+                                            <p>So I can’t understand why they were making people feel bad because they only got silver. It was a kind of really negative.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="group-name">
+                                <p>Life as an Australian</p>
+                                </div>
+                                <div class="summary-theme">
+                                        <p>Life on the mainland</p>
+                                    <ul id="sortable1" class="connectedSortable">
+                                        <li class="ui-state-default">
+                                            <p>Music<span>Annotator02</span></p>
+                                            <div class="vote">
+                                            <span>Important</span>
+                                            <img src="images/important.png">
+                                            <span class="num_imp">1</span>
+                                            <span class="ist">Instance 1</span>
+                                            </div>
+                                        </li>
+                                        <li class="hidden-info">
+                                            <p>"Live music is a really big thing for me and it became incredibly frustrating there for a little while because there was just nothing coming down here."</p>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <p>relaxed sort of life<span>Annotator01</span></p>
+                                            <div class="vote">
+                                            <span>Important</span>
+                                            <img src="images/important.png">
+                                            <span class="num_imp">3</span>
+                                            <span class="ist">Instance 1</span>
+                                            </div>
+                                        </li>
+                                        <li class="hidden-info">
+                                            <p>“woodshop is really far away”</p>
+                                            <p>”I think it’s a pretty relaxed sort of a lifestyle. You know, like, yeah, I think that we place a lot of emphasis on our leisure time and we enjoy our leisure time a lot more than what I would imagine people in other countries to do, and I think that’s really important to your happiness and your well-being in general.“</p>
+                                        </li>
+                                    </ul>
+                            </div>
+                            
+                        </ul>
+                    </div>
+
+                
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+
+
+   
+    
+   <!-- <script src="js/jquery-2.1.1.js"></script> -->
+    <script>
+        $('.nav-tabs a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        });
+    </script>
+    <script>
+      $(function() {
+        $( "#sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7, #sortable8, #sortable9, #sortable10, #sortable11, #sortable12, #sortable13, #sortable14, #sortable15, #sortable16, #sortable17, #sortable18, #sortable19, #sortable20" ).sortable({
+          connectWith: ".connectedSortable"
+        }).disableSelection();
+      });
+      $(function(){
+        $(".hidden-info").hide();
+      });
+      $(function() {
+        $( "#sortableA" ).sortable({
+          connectWith: ".connectedSortableA"
+        }).disableSelection();
+      });
+      $(document).on('click',".insight-theme ul li .ist",function(){
+        if($(this).parent().parent().next().is(":visible")){
+            $(this).parent().parent().next().hide();
+        }else{
+            $(this).parent().parent().next().show();
+            $(this).parent().parent().addClass("selected");
+        }
+      })
+  </script>
+</body>
+</html>

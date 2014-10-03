@@ -176,6 +176,7 @@
     <script type= "text/javascript" src="js/jquery-ui.js"></script>
 
     <script>
+        var count=1;
         $("#tools li").click(function () {
             $("li").removeClass("active");
             $(this).addClass('active');
@@ -198,9 +199,6 @@
             }
         });
 
-    </script>
-
-    <script>
         $('.sentence').click(function () {
 
             var y = $(this).offset().top;
@@ -210,7 +208,8 @@
             {   if($(this).hasClass("hasAnno")){
 
                 }else{
-                $(this).addClass("sentenceStyle");
+                $(this).addClass("sentenceStyle").attr("id","count"+"_"+1);
+                count++;
                 var para = $('<div>');
                 var tx = $('<textarea>').attr("placeholder", "Enter interpretations, insights and ideas here.");
                 var div_theme = $('<div>');
@@ -297,7 +296,8 @@
                 $(para).append($(tx));
                 $(para).append($(tx_val));
                 $(".para-active .tx-val").hide();
-
+                $(para).attr("id","count"+"_"+count);
+                count++;
                 $(para).append($(done));
                 $(para).append($(cancel));
                 $(para).append($(vote));
@@ -312,6 +312,10 @@
                 }
             }else{
                 $(this).toggleClass('sentenceStyle');
+                if($(this).hasClass('sentenceStyle')){
+                }else{
+                    $(this).removeClass('hasAnno');
+                }
             }
         });
 
@@ -330,6 +334,10 @@
 
         });
         $(document).on("click",".cancel",function() {
+            var id_count = $(this).parent().attr("id").split("_")[1]-1;
+            var new_id = "#count_"+id_count;
+            $(new_id).removeClass("hasAnno");
+
             if($(this).prev().prev().prev().val().length===0){
                 $(this).parent().remove();
             }else{
@@ -355,8 +363,6 @@
             $(".para-active .vote").hide();
             $(".para-active .add").show();
             $(".para-active .edit").hide();
-
-            
         });
 
         $(document).on("click",".add",function(){

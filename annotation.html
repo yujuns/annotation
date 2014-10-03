@@ -176,6 +176,7 @@
     <script type= "text/javascript" src="js/jquery-ui.js"></script>
 
     <script>
+        var count=1;
         $("#tools li").click(function () {
             $("li").removeClass("active");
             $(this).addClass('active');
@@ -198,9 +199,6 @@
             }
         });
 
-    </script>
-
-    <script>
         $('.sentence').click(function () {
 
             var y = $(this).offset().top;
@@ -210,7 +208,8 @@
             {   if($(this).hasClass("hasAnno")){
 
                 }else{
-                $(this).addClass("sentenceStyle");
+                $(this).addClass("sentenceStyle").attr("id","count"+"_"+1);
+                count++;
                 var para = $('<div>');
                 var tx = $('<textarea>').attr("placeholder", "Enter interpretations, insights and ideas here.");
                 var div_theme = $('<div>');
@@ -224,7 +223,7 @@
                 var theme_val = $('<p>');
                 $(theme_val).addClass('theme-val');
 
-                var edit = $('<a>').text("Edit").attr('href','#');
+                var edit = $('<a>').text("Edit").attr('href','#editedit');
                 $(edit).addClass('edit');
 
                 var tx_val =$('<p>');
@@ -245,24 +244,36 @@
                 /* microcopies */
                 var wrapper = $('<div>').addClass('wrapper');
                 var mc_menu = $('<div>').addClass('mc-menu');
-                var sp;
-                var m=1;
-                var n=1;
-                for(i=0;i<10;i++)
-                {
 
-                    if (i%3 === 0){
-                        sp = $('<span>').addClass('mc-title').text('Group '+m);
-                        m++;
-                    }else{
-                        sp = sp = $('<span>').addClass('mc').text('Theme '+n);
-                        n++;
-                    }
-                    $(mc_menu).append($(sp));
-
-                }
                 /* microcopies over */
+                var mt1=$('<span>').addClass('mc-title').text('Australian Life');
+                var t1 =$('<span>').addClass('mc').text('likes');
+                var t2 =$('<span>').addClass('mc').text('dislikes');
+                var t3 =$('<span>').addClass('mc').text('people');
+                var t4 =$('<span>').addClass('mc').text('food');
+                var mt2=$('<span>').addClass('mc-title').text('National Identity');
+                var t5 =$('<span>').addClass('mc').text('sports');
+                var t6 =$('<span>').addClass('mc').text('Anzac Day');
+                var t7 =$('<span>').addClass('mc').text('Australian Day');
+                var mt3=$('<span>').addClass('mc-title').text('Other Contries Opinions');
+                var t8 =$('<span>').addClass('mc').text('Asian Countries');
+                var t9 =$('<span>').addClass('mc').text('United States');
+                var t10 =$('<span>').addClass('mc').text('friendly people');
 
+
+                $(mc_menu).append($(mt1));
+                $(mc_menu).append($(t1));
+                $(mc_menu).append($(t2));
+                $(mc_menu).append($(t3));
+                $(mc_menu).append($(t4));
+                $(mc_menu).append($(mt2));
+                $(mc_menu).append($(t5));
+                $(mc_menu).append($(t6));
+                $(mc_menu).append($(t7));
+                $(mc_menu).append($(mt3));
+                $(mc_menu).append($(t8));
+                $(mc_menu).append($(t9));
+                $(mc_menu).append($(t10));
 
 
                 $(vote).append($(txt_important));
@@ -297,7 +308,8 @@
                 $(para).append($(tx));
                 $(para).append($(tx_val));
                 $(".para-active .tx-val").hide();
-
+                $(para).attr("id","count"+"_"+count);
+                count++;
                 $(para).append($(done));
                 $(para).append($(cancel));
                 $(para).append($(vote));
@@ -312,6 +324,10 @@
                 }
             }else{
                 $(this).toggleClass('sentenceStyle');
+                if($(this).hasClass('sentenceStyle')){
+                }else{
+                    $(this).removeClass('hasAnno');
+                }
             }
         });
 
@@ -330,6 +346,10 @@
 
         });
         $(document).on("click",".cancel",function() {
+            var id_count = $(this).parent().attr("id").split("_")[1]-1;
+            var new_id = "#count_"+id_count;
+            $(new_id).removeClass("hasAnno");
+
             if($(this).prev().prev().prev().val().length===0){
                 $(this).parent().remove();
             }else{
@@ -355,8 +375,6 @@
             $(".para-active .vote").hide();
             $(".para-active .add").show();
             $(".para-active .edit").hide();
-
-            
         });
 
         $(document).on("click",".add",function(){
